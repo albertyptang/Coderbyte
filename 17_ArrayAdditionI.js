@@ -17,9 +17,10 @@ function ArrayAdditionI(arr){
         //If the only array value left didn't satisfy the goal, this path fails and we return
         if(array.length===1){
         return console.log("Failed");}
-        //If there are still values left but we have yet to satisfy the goal, we start by searching if any of the array values equal the goal. If that path fails, we will start subtracting the goal value.
+        //If there are still values left but we have yet to satisfy the goal, we start by searching if any of the array values equal the goal. 
+        //If that path fails, we will subtract the goal value.
         var firstarrayvalue = array.shift();
-        return Recursion(array.slice(0),goal) || Recursion(array.slice(0),goal-firstarrayvalue);
+        return Recursion(array,goal) || Recursion(array,goal-firstarrayvalue);
     }
   //Start the recursion, if there is no true value obtainable the result will be false
   return Recursion(arr, largestnumber)||false;
